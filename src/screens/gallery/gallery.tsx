@@ -1,8 +1,13 @@
 import React from 'react';
-import {Text} from 'react-native';
+import Navbar from '../../components/navbar/navbar';
+import {ScreenHome} from './style';
 
 const Gallery = () => {
-  return <Text>Gallery</Text>;
+  return (
+    <ScreenHome>
+      <Navbar title="Gallery" />
+    </ScreenHome>
+  );
 };
 
 export default Gallery;

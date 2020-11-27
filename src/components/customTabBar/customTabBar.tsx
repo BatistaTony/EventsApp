@@ -1,4 +1,3 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import styled from 'styled-components/native';
 import Colors from './../../constants/colors';
@@ -6,30 +5,57 @@ import Colors from './../../constants/colors';
 import HomeIcon from './../../assets/images/icones/home.svg';
 import PlusIcon from './../../assets/images/icones/plus-outline.svg';
 import GalleryIcon from './../../assets/images/icones/camera-outline.svg';
+import {StyleSheet} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
-const CustomTabBar = () => {
-  const navigation = useNavigation();
-
+const CustomTabBar = ({state, navigation}: any) => {
   const goTo = (screenName: string) => {
     navigation.navigate(screenName);
   };
 
   return (
-    <TabArea>
+    <TabArea style={styles.tab}>
       <TabItem onPress={() => goTo('Home')}>
-        <HomeIcon width="25" height="25" fill={Colors.bg1} />
+        <HomeIcon
+          width="27"
+          height="27"
+          fill={state.index === 0 ? Colors.bg1 : Colors.inactive}
+        />
       </TabItem>
 
       <TabAdd onPress={() => goTo('CreateEvent')}>
-        <PlusIcon width="27" height="27" fill="#ffffff" />
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 0}}
+          colors={[Colors.bg1, Colors.bg2]}
+          style={styles.gradient}>
+          <PlusIcon width="25" height="25" fill="#ffffff" />
+        </LinearGradient>
       </TabAdd>
 
       <TabItem onPress={() => goTo('Gallery')}>
-        <GalleryIcon width="25" height="25" fill={Colors.bg1} />
+        <GalleryIcon
+          width="27"
+          height="27"
+          fill={state.index === 2 ? Colors.bg1 : Colors.inactive}
+        />
       </TabItem>
     </TabArea>
   );
 };
+
+const styles = StyleSheet.create({
+  tab: {
+    elevation: 10,
+  },
+  gradient: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 100,
+  },
+});
 
 const TabArea = styled.View`
   width: 100%;
@@ -51,7 +77,6 @@ const TabAdd = styled.TouchableOpacity`
   height: 62px;
   border-radius: 200px;
   border: 5px solid white;
-  background: ${Colors.bg1};
   justify-content: center;
   align-items: center;
   margin-top: -50px;
