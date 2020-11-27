@@ -15,7 +15,7 @@ const CustomTabBar = ({state, navigation}: any) => {
 
   return (
     <TabArea style={styles.tab}>
-      <TabItem onPress={() => goTo('Home')}>
+      <TabItem activeOpacity={0.9} onPress={() => goTo('Home')}>
         <HomeIcon
           width="27"
           height="27"
@@ -23,7 +23,7 @@ const CustomTabBar = ({state, navigation}: any) => {
         />
       </TabItem>
 
-      <TabAdd onPress={() => goTo('CreateEvent')}>
+      <TabAdd activeOpacity={0.9} onPress={() => goTo('CreateEvent')}>
         <LinearGradient
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
@@ -33,7 +33,7 @@ const CustomTabBar = ({state, navigation}: any) => {
         </LinearGradient>
       </TabAdd>
 
-      <TabItem onPress={() => goTo('Gallery')}>
+      <TabItem activeOpacity={0.9} onPress={() => goTo('Gallery')}>
         <GalleryIcon
           width="27"
           height="27"

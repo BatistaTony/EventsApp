@@ -7,10 +7,14 @@ import Colors from './../../constants/colors';
 import BackIcon from './../../assets/images/icones/back1.svg';
 import {useNavigation} from '@react-navigation/native';
 
-const Navbar = () => {
+interface IProps {
+  title: string;
+}
+
+const Navbar = ({title}: IProps) => {
   const navigation = useNavigation();
 
-  const backToHome = ({title}: any) => {
+  const backToHome = () => {
     navigation.goBack();
   };
 
@@ -34,9 +38,6 @@ const styles = StyleSheet.create({
   gradient: {
     width: '100%',
     height: 70,
-    position: 'absolute',
-    top: 0,
-    left: 0,
   },
 });
 
