@@ -58,7 +58,7 @@ const Title = styled.Text`
 
 const ButtonBack = styled.TouchableOpacity`
   position: absolute;
-  left: 10px;
+  left: 20px;
   padding-bottom: 15px;
 `;
 

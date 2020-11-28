@@ -11,7 +11,6 @@ const MainTab = () => {
   return (
     <Tab.Navigator tabBar={(props: any) => <CustomTabBar {...props} />}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="CreateEvent" component={CreateEvent} />
       <Tab.Screen name="Gallery" component={Gallery} />
     </Tab.Navigator>
   );

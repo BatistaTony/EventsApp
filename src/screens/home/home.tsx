@@ -84,6 +84,9 @@ const Home = () => {
 
         <ListEvent
           keyExtractor={(item: any) => item.id}
+          contentContainerStyle={{
+            paddingBottom: 50,
+          }}
           data={typeList === 0 ? events : eventsJoined}
           renderItem={({item}: any) => <ItemEvent key={item.id} data={item} />}
         />
