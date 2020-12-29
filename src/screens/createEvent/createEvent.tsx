@@ -15,8 +15,16 @@ import {
   CustomCalender,
   ButtonCreateEvent,
   ButtonText,
+  TimeRangeCircle,
+  TimeRangeCircleInner,
+  TimeRangeCircleLimit,
+  TimeRangeContainer,
+  TimeRangeLegend,
+  TimeRangeLine,
+  TimeRangeLegendContainer,
 } from './style';
 import Colors from './../../constants/colors';
+import {Calendar} from 'react-native-calendars';
 
 const CreateEvent = () => {
   return (
@@ -28,9 +36,9 @@ const CreateEvent = () => {
         <FormGroupCreateEvent>
           <LabelInput>Title</LabelInput>
           <TextInputCreateEvent
-            numberOfLines={5}
+            padding={10}
             placeholder="title of the event"
-            height={100}
+            height={50}
           />
         </FormGroupCreateEvent>
         <FormGroupDate>
@@ -41,7 +49,32 @@ const CreateEvent = () => {
           </DateInput>
         </FormGroupDate>
 
-        <CustomCalender></CustomCalender>
+        <CustomCalender>
+          <Calendar
+            style={{
+              width: '100%',
+              height: 300,
+            }}
+            Handler={(date) => console.log(date)}
+          />
+
+          <TimeRangeContainer>
+            <TimeRangeCircleLimit isFirst={true} />
+            <TimeRangeCircleLimit />
+
+            <TimeRangeLine></TimeRangeLine>
+            <TimeRangeLegendContainer>
+              <TimeRangeLegend isFirst={true}>12:00 PM</TimeRangeLegend>
+              <TimeRangeLegend>12:00 PM</TimeRangeLegend>
+            </TimeRangeLegendContainer>
+            <TimeRangeCircle isFirst={true}>
+              <TimeRangeCircleInner />
+            </TimeRangeCircle>
+            <TimeRangeCircle>
+              <TimeRangeCircleInner />
+            </TimeRangeCircle>
+          </TimeRangeContainer>
+        </CustomCalender>
 
         <FormGroupCreateEvent>
           <LabelInput>Place</LabelInput>
@@ -56,8 +89,9 @@ const CreateEvent = () => {
         <FormGroupCreateEvent>
           <LabelInput>Description</LabelInput>
           <TextInputCreateEvent
+            multiline={true}
             numberOfLines={5}
-            placeholder="title of the event"
+            placeholder="Write little about the the event, to people know who this events is about.           Write little about the the event, to people know who this events is about."
             height={150}
           />
         </FormGroupCreateEvent>

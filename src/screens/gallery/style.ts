@@ -23,9 +23,8 @@ export const ButtonFilter = styled.TouchableOpacity`
   margin-left: 10px;
 `;
 
-export const ListPhotos = styled.FlatList`
+export const ListPhotosStyled = styled.FlatList`
   width: 100%;
-  padding: 15px;
   padding-top: 20px;
   display: flex;
   flex-direction: row;
@@ -33,11 +32,14 @@ export const ListPhotos = styled.FlatList`
 `;
 
 export const Photo = styled.TouchableOpacity`
-  width: 170px;
-  height: 170px;
-  border-radius: 20px;
+  width: 47%;
+  height: 150px;
+  border-radius: 15px;
   overflow: hidden;
-  margin: 10px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 10px;
+  background: red;
 `;
 
 export const BackgroundPhoto = styled.Image`

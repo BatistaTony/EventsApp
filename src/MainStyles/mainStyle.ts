@@ -6,12 +6,4 @@ export const CustomScreen = styled.SafeAreaView`
   align-items: center;
 `;
 
-export const getFont = (font: string = 'Regular') => `
-    @font-face {
-        src: url(./../assets/fonts/Poppins/Poppins-${font});
-        font-family: Poppins-${font};
-    }
-
-    font-family: Poppins-${font};
-
-`;
+export const getFont = (font: string) => `font-family: Poppins${font}`;

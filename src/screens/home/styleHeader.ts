@@ -22,13 +22,14 @@ export const HeaderTitleContainer = styled.View`
 export const Title = styled.Text`
   font-size: 30px;
   color: white;
-  font-weight: bold;
+  font-family: ProductSansRegular;
 `;
 
-export const Avatar = styled.Image`
+export const Avatar = styled.TouchableOpacity`
   width: 40px;
   height: 40px;
   border-radius: 100px;
+  overflow: hidden;
 `;
 
 export const FormGroup = styled.View`
@@ -48,6 +49,7 @@ export const TextInputHome = styled.TextInput`
   color: white;
   font-size: 16px;
   padding-left: 5px;
+  font-family: ProductSansRegular;
 `;
 
 export const MenuHome = styled.View`
@@ -77,6 +79,7 @@ export const TextMenuHome = styled.Text`
   border-width: 4px;
   border-color: transparent;
   opacity: ${({active}: any) => (active ? '1' : '.6')};
+  font-family: ProductSansRegular;
 `;
 
 export const MenuItemSinal = styled.View`

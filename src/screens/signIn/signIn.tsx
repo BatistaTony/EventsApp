@@ -58,6 +58,10 @@ const SignIn = () => {
     Keyboard.dismiss();
   };
 
+  const goToSignUp = () => {
+    navigation.navigate('SignUp');
+  };
+
   return (
     <Screen>
       <FormArea>
@@ -76,12 +80,20 @@ const SignIn = () => {
           value={passwordField}
         />
 
-        <ButtonSign onPress={handleSignIn}>
+        <ButtonSign activeOpacity={0.9} onPress={handleSignIn}>
           <ButtonSignText>Login</ButtonSignText>
         </ButtonSign>
+        <SimpleButtonSign
+          style={{marginTop: 15}}
+          activeOpacity={0.9}
+          onPress={goToSignUp}>
+          <SimpleButtonSignText>
+            Don't have an account ? create now
+          </SimpleButtonSignText>
+        </SimpleButtonSign>
 
         <SignSimpleButtonArea>
-          <SimpleButtonSign>
+          <SimpleButtonSign activeOpacity={0.9}>
             <SimpleButtonSignText>Forget your Password ?</SimpleButtonSignText>
           </SimpleButtonSign>
         </SignSimpleButtonArea>

@@ -26,7 +26,7 @@ const CustomInput = ({
           placeholder={placeholder}
           onChangeText={(text: string) => onChange(text)}
           {...props}
-          placeholderTextColor="gray"
+          placeholderTextColor={Colors.inactive}
         />
       </CustomFormInput>
     </FormGroup>
@@ -54,10 +54,12 @@ export const InputForm = styled.TextInput`
   font-size: 18px;
   color: white;
   padding-left: 10px;
+  font-family: PoppinsRegular;
 `;
 
 export const LabelInput = styled.Text`
   color: white;
   font-size: 17px;
   width: 100%;
+  font-family: PoppinsRegular;
 `;

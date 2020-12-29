@@ -53,7 +53,7 @@ const NavbarStyled = styled.View`
 const Title = styled.Text`
   color: white;
   font-size: 23px;
-  font-weight: bold;
+  font-family: ProductSansBold;
 `;
 
 const ButtonBack = styled.TouchableOpacity`

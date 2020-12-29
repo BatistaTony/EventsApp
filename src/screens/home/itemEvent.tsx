@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View} from 'react-native';
 import {
@@ -10,10 +11,14 @@ import {
   EventDateContainer,
 } from './style';
 const ItemEvent = ({data}: any) => {
-  console.log(data);
+  const navigation = useNavigation();
+
+  const goToEvent = () => {
+    navigation.navigate('SingleEvent');
+  };
 
   return (
-    <ItemEventArea activeOpacity={1}>
+    <ItemEventArea onPress={goToEvent} activeOpacity={1}>
       <ItemEventLeftArea>
         <EventTitle>{data.title}</EventTitle>
         <EventDateContainer>

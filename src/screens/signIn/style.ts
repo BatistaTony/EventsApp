@@ -17,7 +17,7 @@ export const FormArea = styled.View`
 export const TitleSign = styled.Text`
   color: white;
   font-size: 30px;
-  font-weight: bold;
+  font-family: ProductSansBold;
   width: 100%;
   margin-bottom: 30px;
 `;
@@ -34,6 +34,7 @@ export const ButtonSign = styled.TouchableOpacity`
 export const ButtonSignText = styled.Text`
   color: white;
   font-size: 17px;
+  font-family: ProductSansRegular;
 `;
 
 export const SignSimpleButtonArea = styled.View`
@@ -51,4 +52,5 @@ export const SimpleButtonSignText = styled.Text`
   font-size: 16px;
   color: white;
   text-decoration: underline;
+  font-family: ProductSansRegular;
 `;

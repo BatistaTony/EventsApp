@@ -37,7 +37,7 @@ const CustomTabBar = ({state, navigation}: any) => {
         <GalleryIcon
           width="27"
           height="27"
-          fill={state.index === 2 ? Colors.bg1 : Colors.inactive}
+          fill={state.index === 1 ? Colors.bg1 : Colors.inactive}
         />
       </TabItem>
     </TabArea>

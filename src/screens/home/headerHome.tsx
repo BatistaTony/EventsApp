@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Image} from 'react-native';
 import FormGroupHome from './formGroupHome';
 import {
   CustomHeader,
@@ -13,13 +13,19 @@ import {
 } from './styleHeader';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from './../../constants/colors';
+import {useNavigation} from '@react-navigation/native';
 
 const HeaderHome = ({setList}: any) => {
+  const navigation = useNavigation();
   const [menuHomeItem, setMenuItem] = useState<number>(0);
 
   const selectMenu = (menu: number) => {
     setMenuItem(menu);
     setList(menu);
+  };
+
+  const goTo = (screeName: string) => {
+    navigation.navigate(screeName);
   };
 
   return (
@@ -31,7 +37,12 @@ const HeaderHome = ({setList}: any) => {
       <CustomHeader>
         <HeaderTitleContainer>
           <Title>Find Event</Title>
-          <Avatar source={require('./../../assets/images/avatar.jpg')} />
+          <Avatar onPress={() => goTo('Profile')} activeOpacity={1}>
+            <Image
+              style={{width: '100%', height: '100%'}}
+              source={require('./../../assets/images/avatar.jpg')}
+            />
+          </Avatar>
         </HeaderTitleContainer>
         <FormGroupHome />
 

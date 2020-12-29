@@ -41,7 +41,9 @@ export const EventTitle = styled.Text`
   font-size: 20px;
   width: 100%;
   height: 52px;
-  color: black;
+  color: ${Colors.black};
+  font-family: ProductSansRegular;
+  font-weight: 300;
 `;
 
 export const EventDateContainer = styled.View`
@@ -54,6 +56,7 @@ export const EventDateContainer = styled.View`
 export const EventTime = styled.Text`
   font-size: 12px;
   color: gray;
+  font-family: ProductSansRegular;
 `;
 
 export const EventDate = styled.Text`
@@ -66,6 +69,7 @@ export const EventDate = styled.Text`
   color: white;
   border-radius: 10px;
   margin-left: 10px;
+  font-family: ProductSansRegular;
 `;
 
 export const EventImage = styled.Image`

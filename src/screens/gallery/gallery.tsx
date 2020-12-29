@@ -1,49 +1,40 @@
 import React from 'react';
 import Navbar from '../../components/navbar/navbar';
-import {
-  ListPhotos,
-  ScreenHome,
-  Photo,
-  BackgroundPhoto,
-  FilterGallery,
-  ButtonFilter,
-} from './style';
+import {ScreenHome, FilterGallery, ButtonFilter} from './style';
 import Colors from './../../constants/colors';
-import {useDeviceOrientation} from '@react-native-community/hooks';
 
 import ListIcon from './../../assets/images/icones/menu.svg';
+import ListPhotos from './listPhotos';
 
 const Gallery = () => {
-  const deviceOrientation = useDeviceOrientation();
-
   const photos = [
     {
       id: '56',
-      img: './../../assets/images/photo1.jpg',
+      img: require('./../../assets/images/photo1.jpg'),
     },
     {
       id: '5',
-      img: './../../assets/images/photo1.jpg',
+      img: require('./../../assets/images/photo2.jpg'),
     },
     {
       id: '56g',
-      img: './../../assets/images/photo1.jpg',
+      img: require('./../../assets/images/photo3.jpg'),
     },
     {
       id: '5a6',
-      img: './../../assets/images/photo1.jpg',
+      img: require('./../../assets/images/photo4.jpg'),
     },
     {
       id: '566',
-      img: './../../assets/images/photo1.jpg',
+      img: require('./../../assets/images/photo5.jpg'),
     },
     {
       id: '5v6',
-      img: './../../assets/images/photo1.jpg',
+      img: require('./../../assets/images/photo6.jpg'),
     },
     {
       id: '5va6',
-      img: './../../assets/images/photo1.jpg',
+      img: require('./../../assets/images/photo7.jpg'),
     },
   ];
 
@@ -58,26 +49,7 @@ const Gallery = () => {
           <ListIcon width="27" height="30" fill={Colors.black} />
         </ButtonFilter>
       </FilterGallery>
-      <ListPhotos
-        data={photos}
-        contentContainerStyle={{
-          flex: 1,
-          justifyContent: 'flex-start',
-          alignItems: 'flex-start',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          paddingBottom: 50,
-        }}
-        bouncesZoom={true}
-        keyExtractor={(item: any) => item.id}
-        renderItem={({item}: any) => (
-          <Photo key={item.id} activeOpacity={1}>
-            <BackgroundPhoto
-              source={require('./../../assets/images/photo1.jpg')}
-            />
-          </Photo>
-        )}
-      />
+      <ListPhotos padding={15} photos={photos} />
     </ScreenHome>
   );
 };
